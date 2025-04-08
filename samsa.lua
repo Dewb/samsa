@@ -10,29 +10,29 @@
 --    * implement acceleration instead of cubic delta?
 
 faders = {
-	{{},{},{},{}}, {{},{},{},{}}, {{},{},{},{}}, {{},{},{},{}},
+    {{},{},{},{}}, {{},{},{},{}}, {{},{},{},{}}, {{},{},{},{}},
 }
 
 function init_faders()
-	faders[1][1] = {cc=0, ch=1, hires=true, value=0, high_byte=0, low_byte=0}
-	faders[1][2] = {cc=1, ch=1, hires=true, value=0, high_byte=0, low_byte=0}
-	faders[1][3] = {cc=2, ch=1, hires=true, value=0, high_byte=0, low_byte=0}
-	faders[1][4] = {cc=3, ch=1, hires=true, value=0, high_byte=0, low_byte=0}
+    faders[1][1] = {cc=0, ch=1, hires=true, value=0, high_byte=0, low_byte=0}
+    faders[1][2] = {cc=1, ch=1, hires=true, value=0, high_byte=0, low_byte=0}
+    faders[1][3] = {cc=2, ch=1, hires=true, value=0, high_byte=0, low_byte=0}
+    faders[1][4] = {cc=3, ch=1, hires=true, value=0, high_byte=0, low_byte=0}
 
-	faders[2][1] = {cc=4, ch=1, hires=true, value=0, high_byte=0, low_byte=0}
-	faders[2][2] = {cc=5, ch=1, hires=true, value=0, high_byte=0, low_byte=0}
-	faders[2][3] = {cc=6, ch=1, hires=true, value=0, high_byte=0, low_byte=0}
-	faders[2][4] = {cc=7, ch=1, hires=true, value=0, high_byte=0, low_byte=0}
+    faders[2][1] = {cc=4, ch=1, hires=true, value=0, high_byte=0, low_byte=0}
+    faders[2][2] = {cc=5, ch=1, hires=true, value=0, high_byte=0, low_byte=0}
+    faders[2][3] = {cc=6, ch=1, hires=true, value=0, high_byte=0, low_byte=0}
+    faders[2][4] = {cc=7, ch=1, hires=true, value=0, high_byte=0, low_byte=0}
 
-	faders[3][1] = {cc=8, ch=1, hires=true, value=0, high_byte=0, low_byte=0}
-	faders[3][2] = {cc=9, ch=1, hires=true, value=0, high_byte=0, low_byte=0}
-	faders[3][3] = {cc=10, ch=1, hires=true, value=0, high_byte=0, low_byte=0}
-	faders[3][4] = {cc=11, ch=1, hires=true, value=0, high_byte=0, low_byte=0}
+    faders[3][1] = {cc=8, ch=1, hires=true, value=0, high_byte=0, low_byte=0}
+    faders[3][2] = {cc=9, ch=1, hires=true, value=0, high_byte=0, low_byte=0}
+    faders[3][3] = {cc=10, ch=1, hires=true, value=0, high_byte=0, low_byte=0}
+    faders[3][4] = {cc=11, ch=1, hires=true, value=0, high_byte=0, low_byte=0}
 
-	faders[4][1] = {cc=12, ch=1, hires=true, value=0, high_byte=0, low_byte=0}
-	faders[4][2] = {cc=13, ch=1, hires=true, value=0, high_byte=0, low_byte=0}
-	faders[4][3] = {cc=14, ch=1, hires=true, value=0, high_byte=0, low_byte=0}
-	faders[4][4] = {cc=15, ch=1, hires=true, value=0, high_byte=0, low_byte=0}
+    faders[4][1] = {cc=12, ch=1, hires=true, value=0, high_byte=0, low_byte=0}
+    faders[4][2] = {cc=13, ch=1, hires=true, value=0, high_byte=0, low_byte=0}
+    faders[4][3] = {cc=14, ch=1, hires=true, value=0, high_byte=0, low_byte=0}
+    faders[4][4] = {cc=15, ch=1, hires=true, value=0, high_byte=0, low_byte=0}
 end
 
 init_faders()
@@ -42,12 +42,12 @@ dirty = true
 indicate_page = false
 
 meta = {
-	script = "samsa",
-	version = "0.1",
+    script = "samsa",
+    version = "0.1",
 }
 
 function init()
-	print("🐞🐞🐞🐞 samsa 🐞🐞🐞🐞")
+    print("🐞🐞🐞🐞 samsa 🐞🐞🐞🐞")
     print("")
     print("one morning, as the arc was waking up from anxious dreams, it discovered it had been changed into a 16n.")
 
@@ -55,7 +55,7 @@ function init()
 end
 
 function arc_key(z)
-	if z == 1 then
+    if z == 1 then
         page = wrap(page + 1, 1, 4)
         indicate_page = true
     else
@@ -80,7 +80,7 @@ end
 
 function redraw_page(p)
     for n = 1, 4 do
-		arc_led_all(n, 0)
+        arc_led_all(n, 0)
 
         local hi = ((faders[p][n].high_byte >> 1) & 0x3F) + 1
         local lo = (faders[p][n].low_byte & 0x3F) + 1
@@ -92,7 +92,7 @@ function redraw_page(p)
         arc_led_single(n, hi, med)
         -- fast indicator showing low 6 bits
         arc_led_single(n, lo, 15)
-	end
+    end
 end
 
 function arc(n, d)
