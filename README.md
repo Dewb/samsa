@@ -1,7 +1,25 @@
 # samsa
 
-Samsa is a script for iii arc that emulates a 16n; four pages of four high-resolution MIDI CC parameters, with 14-bit MSB/LSB support. 
+script for iii arc
 
-The key cycles through the four pages. on each dial, a gradient shows the macro value of the parameter (top six bits), while a small indicator shows the low six bits.
+```lua
+-- samsa.lua
+-- by @dewb
+-- 4/7/2025
+--
+-- transform the arc into a 16n; sixteen high-resolution MIDI CC faders.
+-- small gestures make small changes, big gestures make big changes.
+-- press key to cycle through four pages.
+-- supports LED feedback from host to display automation, etc.
+--
+-- todo:
+--    * enable use of 16n editor: send/receive 16n config sysex
+--    * save config to flash
+--    * implement acceleration instead of cubic delta?
+```
 
+# how to use
 
+1. connect arc in iii mode
+2. from this directory, run `diii` ([instructions here](https://github.com/monome/iii?tab=readme-ov-file#diii))
+2. at the diii console, enter `u samsa.lua`

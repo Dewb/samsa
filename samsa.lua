@@ -2,10 +2,13 @@
 -- by @dewb
 -- 4/7/2025
 --
--- transform the arc into a 16n, with 14-bit CC support and LED feedback from host
+-- transform the arc into a 16n; sixteen high-resolution MIDI CC faders.
+-- small gestures make small changes, big gestures make big changes.
+-- press key to change pages.
+-- supports LED feedback from host to display automation, etc.
 --
--- todo: 
---    * enable use of 16n editor: read 16n config sysex for CC assignments
+-- todo:
+--    * enable use of 16n editor: send/receive 16n config sysex
 --    * save config to flash
 --    * implement acceleration instead of cubic delta?
 
