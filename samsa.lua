@@ -145,12 +145,12 @@ function arc_led_range(n, first, last, startval, endval)
     local l = wrap(last, 1, 64)
     for i = f, l do
         v = round(linlin(f, l, startval, endval, i))
-        arc_led(n, wrap(i - 31, 1, 64), v)
+        arc_led(n, wrap(i - 32, 1, 64), v)
     end
 end
 
 function arc_led_single(n, pos, val)
-  arc_led(n, wrap(pos - 31, 1, 64), wrap(val, 0, 15))
+  arc_led(n, wrap(pos - 32, 1, 64), wrap(val, 0, 15))
 end
 
 init()
