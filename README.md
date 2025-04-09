@@ -23,3 +23,7 @@ script for iii arc
 1. connect arc in iii mode
 2. from this directory, run `diii` ([instructions here](https://github.com/monome/iii?tab=readme-ov-file#diii))
 2. at the diii console, enter `u samsa.lua`
+
+# demo
+
+https://github.com/user-attachments/assets/f3e7cea9-2bfd-47df-9c60-9322d6865c52
